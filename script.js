@@ -29,27 +29,42 @@ if (listChanges.hasChildNodes()) {
   listChanges.removeChild(listChanges.lastElementChild);
 }
 
-  // Part 4 -- not working
-// const specialTitle = document.getElementsByClassName('special-title');
-// specialTitle.forEach (specialTitleSize) {
-//   specialTitle.style.fontSize = '2rem';
-// };
+  // Part 4
+const specialTitle = document.querySelectorAll('.special-title');
+specialTitle.forEach(special => {
+  special.style.fontSize = '2rem';
+});
 
   // Part 5
-  const raceChanges = this.getElementById('past-races');
-  if (raceChanges.hasChildNodes()) {
-    raceChanges.removeChild(raceChanges.children[3]);
-  }
+  const raceChanges = document.getElementById('past-races');
+  const races = raceChanges.querySelectorAll('li');
+  for (let i = 0; i < races.length; i++) {
+  if (races[i].textContent === "Chicago") {
+    raceChanges.removeChild(races[i]);
+  }};
+
   // Part 6
 const newRace = document.createElement('li');
-raceChanges.appendChild(newRace);
 newRace.innerText = 'Barcelona'
-
+raceChanges.appendChild(newRace)
+// console.log(raceChanges)
 
   // Part 7 -- Create a new .blog-post corresponding to the new city added in Part 6. You will have to create a new <div>with class of .blog-post, a new <h2>with text, and a new <p>with some text. Think about what order you want to create the elements, and what order you want to append them in.
-const newBlogPost = document.createElement('div')
-newBlogPost.classList.add('blog-post')
 
+  // Need to append the new elements to the correction sections
+const newBlogPost = document.createElement('div')
+document.body.appendChild(newBlogPost);
+newBlogPost.classList.add('blog-post')
+newBlogPost.classList.add('purple')
+const barcelona = document.createElement('h1')
+barcelona.innerText = "Barcelona"
+newBlogPost.appendChild(barcelona)
+
+const barcelonaPara = document.createElement('p');
+barcelonaPara.innerText = "This was a special race and I beat everyone!"
+barcelonaPara.innerText.toUpperCase();
+newBlogPost.appendChild(barcelonaPara)
+console.log(newBlogPost)
 
   // Part 8
 
