@@ -66,8 +66,7 @@ barcelona.innerText = "Barcelona";
 newBlogPost.appendChild(barcelona);
 
 const barcelonaPara = document.createElement('p');
-barcelonaPara.innerText = "This was a special race and I beat everyone!"
-barcelonaPara.innerText.toUpperCase();
+barcelonaPara.innerText = ("This was a special race and I beat everyone!").toUpperCase()
 
 newBlogPost.appendChild(barcelonaPara)
 
@@ -77,5 +76,13 @@ const quoteTitle = document.querySelector('#quote-title')
 quoteTitle.addEventListener('click', randomQuote)
 
   // Part 9
-
+  const toggler = document.getElementsByClassName('blog-post');
+  Array.from(toggler).forEach(post => {
+    post.addEventListener('mouseout', (event) => {
+      post.classList.toggle('purple');
+    })
+    post.addEventListener('mouseenter', (event) => {
+      post.classList.toggle('red');
+    });
+  });
 });
