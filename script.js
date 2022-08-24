@@ -45,29 +45,36 @@ specialTitle.forEach(special => {
 
   // Part 6
 const newRace = document.createElement('li');
-newRace.innerText = 'Barcelona'
-raceChanges.appendChild(newRace)
-// console.log(raceChanges)
+newRace.innerText = 'Barcelona';
+raceChanges.appendChild(newRace);
 
-  // Part 7 -- Create a new .blog-post corresponding to the new city added in Part 6. You will have to create a new <div>with class of .blog-post, a new <h2>with text, and a new <p>with some text. Think about what order you want to create the elements, and what order you want to append them in.
+  // Part 7
+  // Create a new .blog-post corresponding to the new city added in Part 6.You will have to:
+  // * create a new <div> with class of .blog-post
+  //  * a new <h2>with text
+  //  * and a new <p> with some text.
+  //   Think about what order you want to create the elements, and what order you want to append them in.
 
-  // Need to append the new elements to the correction sections
-const newBlogPost = document.createElement('div')
-document.body.appendChild(newBlogPost);
-newBlogPost.classList.add('blog-post')
-newBlogPost.classList.add('purple')
-const barcelona = document.createElement('h1')
-barcelona.innerText = "Barcelona"
-newBlogPost.appendChild(barcelona)
+const newBlogPost = document.createElement('div');
+document.querySelector('.main').appendChild(newBlogPost);
+
+newBlogPost.classList.add('blog-post');
+newBlogPost.classList.add('purple');
+
+const barcelona = document.createElement('h1');
+barcelona.innerText = "Barcelona";
+newBlogPost.appendChild(barcelona);
 
 const barcelonaPara = document.createElement('p');
 barcelonaPara.innerText = "This was a special race and I beat everyone!"
 barcelonaPara.innerText.toUpperCase();
+
 newBlogPost.appendChild(barcelonaPara)
-console.log(newBlogPost)
 
+console.log(document.body.innerHTML)
   // Part 8
-
+const quoteTitle = document.querySelector('#quote-title')
+quoteTitle.addEventListener('click', randomQuote)
 
   // Part 9
 
